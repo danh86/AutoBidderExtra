@@ -1,0 +1,70 @@
+﻿<Window x:Class="FUTAutoBuyer.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
+            <TabItem Header="Login">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Margin="10,6,0,4">Username</Label>
+                    <TextBox Margin="104,12,163,0" Grid.ColumnSpan="2" Width="220" Height="25"/>
+                    <Label Grid.Row="1" Margin="10,3,0,36">Password</Label>
+                    <TextBox Grid.Row="1" Margin="100,0,160,33" Grid.ColumnSpan="2" Height="25" Width="220"/>
+                    <Label Grid.Row="1" Margin="10,39,10,8">Secret Answer</Label>
+                    <TextBox Grid.Row="1" Margin="100,34,160,5" Grid.ColumnSpan="2" Width="220" Height="25"/>
+                    
+                    <Button Grid.Column="1" Margin="64,74,213,-25" Grid.Row="1" Content="Login" Click="Button_Click_1" />
+
+                    <TextBlock x:Name="tbLoginInfo" Height="100" TextWrapping="Wrap" Text="" Margin="76,120,80,-143" Grid.Row="1" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Searches">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Margin="5">Schedule</Label>
+                    <ComboBox Grid.Column="1" Margin="5">
+                        <ComboBox.Items>
+                            <ComboBoxItem>Annually</ComboBoxItem>
+                            <ComboBoxItem>Monthly</ComboBoxItem>
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <Label Grid.Row="1" Margin="5">Amount</Label>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Updates">
+                <Grid Margin="13,81,14,18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnUpdate" Content="Update DB" Grid.Column="1" Margin="163,-59,193,115" Click="btnUpdate_Click"/>
+                    <ListBox x:Name="lbUpdateInfo" Margin="0,-13,0,-90" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>           
+        </TabControl>
+    </Grid>
+</Window>
